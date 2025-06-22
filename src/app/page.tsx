@@ -35,22 +35,22 @@ export default function Home(){
                     <p className='pt-4 text-md font-inter font-light text-text'>Mattehjelp har flere funksjoner for å gå under radar for både alle typer stikkprøver og sensor</p>
                     <div>
                         <SellingPoint
-                            icon={<Camera className='p-1 bg-purple-700 h-13 w-13 text-purple-300'/>}
+                            icon={<Camera className='p-1 bg-purple-700 h-13 w-13 text-purple-300 rounded-lg'/>}
                             title={"Bruker kamera"}>
                             Dersom du har kamera på pcen din vil mattehjelp si om noen står bak eller ser på skjermen din
                         </SellingPoint>
                         <SellingPoint
-                            icon={<Eye className='p-1 bg-purple-700 h-13 w-13 text-purple-300'/>}
+                            icon={<Eye className='p-1 bg-purple-700 h-13 w-13 text-purple-300 rounded-lg'/>}
                             title={"Dimming og skjuling"}>
                             Du kan dimme, skjule eller skru av Mattehjelp når som helst
                         </SellingPoint>
                         <SellingPoint
-                            icon={<Package className='p-1 bg-purple-700 h-13 w-13 text-purple-300'/>}
+                            icon={<Package className='p-1 bg-purple-700 h-13 w-13 text-purple-300 rounded-lg'/>}
                             title={"Skjuling av AI-program"}>
                             Mattehjelper bruker avanserte containeriseringsteknikker for AI-programer egentlig ikke kjører på pcen din selv om de gjør. Dette gjør det fysisk umulig for en prøve å oppdage de
                         </SellingPoint>
                         <SellingPoint
-                            icon={<Syringe className='p-1 bg-purple-700 h-13 w-13 text-purple-300'/>}
+                            icon={<Syringe className='p-1 bg-purple-700 h-13 w-13 text-purple-300 rounded-lg'/>}
                             title={"Sjekker seg selv"}>
                             Mattehjelper har innebygd stikkprøve så den kan tester pc’en din før eksamen
                         </SellingPoint>
@@ -61,7 +61,7 @@ export default function Home(){
                 <h1 className='pt-34 text-2xl font-rubik font-medium text-shadow-lg text-shadow-black'>Ønsker du Mattehjelp <span className='text-purple-600'>gratis?</span></h1>
                 <p className='pt-4 text-md font-inter font-light text-text'>Vi deler ut gratis pro versjon av Mattehjelp til alle som melder seg nyhetbrevet våres, slapp av vi spammer ikke. Du får bare en mail når mattehjelp er klar til bruk.</p>
                 <Input className='mt-6 border-border border-1 w-full' placeholder='Din e-mail'/>
-                <Button className='mt-6 bg-purple-500 hover:bg-purple-400 transition w-full'> Bli med</Button>
+                <Button className='mt-6 bg-purple-500 hover:bg-purple-600 transition w-full'> Bli med</Button>
         </section>
     );
 }
