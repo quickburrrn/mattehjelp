@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Rubik } from "next/font/google";
+import { Geist, Geist_Mono, Rubik, Inter } from "next/font/google";
 import "./globals.css";
 
 import MenuIcon from "./components/icons/MenuIcon";
-import MatteHjelp from "./components/icons/MatteHjelp"
+import { MattehjelpLogo } from "./components/mattehjelplogo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,9 +17,15 @@ const geistMono = Geist_Mono({
 
 const rubik = Rubik({
   variable: "--font-rubik",
-  weight: ['400', '500', '700'],
+  weight: ['400', '500', '600', '700'],
   subsets: ['latin']
 });
+
+const inter = Inter({
+  variable: "--font-inter",
+  weight: ['300', '400', '500'],
+  subsets: ['latin']
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -34,13 +40,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${rubik.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${rubik.variable} ${inter.variable} antialiased`}
       >
-        <header className="bg-slate-900 text-white p-4 text-center flex justify-between">
-          <div className="flex bg-red-400 pb-2">
-            <MatteHjelp className="text-white w-12 h-12 bg-red-800"/>
-            <p className="font-[family-name:var(--font-rubik)] bg-red-200">Matte Hjelp</p>
-          </div>
+        <header className="bg-header border-b border-border text-white p-4 text-center bg-heading flex justify-between">
+          <MattehjelpLogo />
           <MenuIcon className="left-0 text-white w-12 h-12"/>
         </header>
         {children}

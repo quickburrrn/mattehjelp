@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-export default function MenuIcon( props: SVGProps<SVGSVGElement> ){
+export default function Chevron ( props: SVGProps<SVGSVGElement> ){
     return (
         <svg
             {...props}
@@ -14,12 +14,7 @@ export default function MenuIcon( props: SVGProps<SVGSVGElement> ){
             strokeLinecap="round"
             strokeLinejoin="round"
             >
-            <path d="M4 12h16" />
-            <path d="M4 18h16" />
-            <path d="M4 6h16" />
+            <path d="m9 18 6-6-6-6" />
         </svg>
     );
 }
-
-
-
