@@ -27,7 +27,7 @@ export default function Home(){
                     height={500}
                     className='aspect-1/1 rounded-2xl '
                 />
-                <p className='mt-12 px-4 text-md font-inter font-light text-text'>Mattehjelp hjelper deg med å skrive utregning og er <b className='font-semibold text-purple-600'>umulig å oppdage</b> av it-systemer og sensor</p>
+                <p className='mt-12 px-4 text-md font-inter font-light text-text'>Mattehjelp er en AI assistant som hjelper deg med å gjøre oppgaver og skrive utregninger. Den krever ikke nett, blir ikke tatt av stikkprøve og er designet på en måte som gjør at sensor ikke kan ta det for juks!</p>
                 
                 {/* Selling points */}
                 <div className='pt-34'>
