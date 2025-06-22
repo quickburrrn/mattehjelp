@@ -18,14 +18,18 @@
   --font-rubik: var(--font-rubik);
   --font-inter: var(--font-inter);
 
-  --text-2xl: 4rem;
-  --text-xl: 3rem;
+  --text-3xl: 4rem;
+  --text-2xl: 2.5rem; 
+  --text-xl: 1.45rem;
   --text-lg: 1.55rem;
   --text-md: 1.2rem;
 
+  --color-purple-300: #8A44C9;
   --color-purple-400: #EB9AFF;
   --color-purple-500: #AF6AC1;
   --color-purple-600: #E375FF;
+  --color-purple-700: #261C2F;
+
 }
 
 @media (prefers-color-scheme: dark) {

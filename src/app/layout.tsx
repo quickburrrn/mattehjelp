@@ -47,8 +47,13 @@ export default function RootLayout({
           <MenuIcon className="left-0 text-white w-12 h-12"/>
         </header>
         {children}
-        <footer className="bg-slage-900 text-white p-4 text-center">
-          Hello wrodl
+        <footer className="p-4">
+          <div className="justify-center flex"><MattehjelpLogo/></div>
+          <div className="grid grid-cols-3 gap-4 px-2">
+            <div>salgsbetingelser</div>
+            <div>Ofte stilte spørsmål</div>
+            <div>Kontakt oss</div>
+          </div>
         </footer>
       </body>
     </html>
