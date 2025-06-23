@@ -1,13 +1,18 @@
+"use client"
+
 import { Button } from './components/button';
 import { Input } from './components/input';
 import Chevron from './components/icons/Chevron';
 import Image from 'next/image'
 import { SellingPoint } from './components/selling-point';
+import { Checkbox } from './components/checkbox';
 
 import Camera from './components/icons/Camera'
 import Eye from './components/icons/Eye';
 import Package from './components/icons/Package';
 import Syringe from './components/icons/Syringe';
+
+
 
 export default function Home(){
     return (
@@ -15,9 +20,9 @@ export default function Home(){
                 {/* Intro */}
                 <h1 className="text-3xl font-rubik font-semibold text-shadow-lg text-shadow-black">Matte hjelp</h1>
                 <p className="pt-2 text-lg font-inter font-light text-text">Det ultimate AI verktøyet for matteksamen</p>
-                <Button className="mt-24 bg-purple-600 hover:bg-purple-400 transition">Last ned på pc</Button>
+                <Button href="#newsletter" className="mt-24 bg-purple-600 hover:bg-purple-400 transition">Last ned på pc</Button>
                 
-                <a className='pl-6 inline-flex items-center gap-2 mt-8 text-md font-inter font-light text-text cursor-pointer'>Finn ut hvordan det fungerer<Chevron className='h-6 w-6'/></a>
+                <a href='#selling-points' className='pl-6 inline-flex items-center gap-2 mt-8 text-md font-inter font-light text-text cursor-pointer'>Finn ut hvordan det fungerer<Chevron className='h-6 w-6'/></a>
                 
                 <p className='mt-34 mb-6 text-md font-inter font-light text-text'>screenshot av mattehjelp</p>
                 <Image
@@ -31,7 +36,7 @@ export default function Home(){
                 
                 {/* Selling points */}
                 <div className='pt-34'>
-                    <h2 className="text-2xl font-rubik font-medium text-shadow-lg text-shadow-black">Umulig å oppdage</h2>
+                    <h2 className="text-2xl font-rubik font-medium text-shadow-lg text-shadow-black" id="selling-points">Umulig å oppdage</h2>
                     <p className='pt-4 text-md font-inter font-light text-text'>Mattehjelp har flere funksjoner for å gå under radar for både alle typer stikkprøver og sensor</p>
                     <div>
                         <SellingPoint
@@ -58,10 +63,18 @@ export default function Home(){
                 </div>
 
                 {/* Newsletter */}
-                <h1 className='pt-34 text-2xl font-rubik font-medium text-shadow-lg text-shadow-black'>Ønsker du Mattehjelp <span className='text-purple-600'>gratis?</span></h1>
+                <h1 className='pt-34 text-2xl font-rubik font-medium text-shadow-lg text-shadow-black' id="newsletter">Ønsker du Mattehjelp <span className='text-purple-600'>gratis?</span></h1>
                 <p className='pt-4 text-md font-inter font-light text-text'>Vi deler ut gratis pro versjon av Mattehjelp til alle som melder seg nyhetbrevet våres, slapp av vi spammer ikke. Du får bare en mail når mattehjelp er klar til bruk.</p>
-                <Input className='mt-6 border-border border-1 w-full' placeholder='Din e-mail'/>
-                <Button className='mt-6 bg-purple-500 hover:bg-purple-600 transition w-full'> Bli med</Button>
+                <form 
+                    className='text-left'
+                    onSubmit={() => {
+                        alert('du er i ventekøen');
+                    }}
+                >
+                    <Input type="email" className='mt-6 border-border border-1 w-full' placeholder='Din e-mail' />
+                    <Checkbox className="mt-6">Jeg samtykker å få en mail når produktet er lansert</Checkbox>
+                    <Button type="submit" className='cursor-pointer px-12 py-3 font-rubik text-lg rounded-xl mt-6 bg-purple-500 hover:bg-purple-600 transition w-full'>Bli med</Button>
+                </form>
         </section>
     );
 }
