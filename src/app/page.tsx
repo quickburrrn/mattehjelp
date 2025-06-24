@@ -12,9 +12,17 @@ import Eye from './components/icons/Eye';
 import Package from './components/icons/Package';
 import Syringe from './components/icons/Syringe';
 
-
+import { neon } from '@neondatabase/serverless';
 
 export default function Home(){
+    async function addMail(formData: FormData) {
+        'use server';
+        
+        const sql = neon(`${process.env.DATABASE_URL}`);
+        const email = formData.get('email');
+        await sql`INSERT INTO emails (email) VALUES ($email)`;
+    }
+
     return (
         <section className="grid justify-items-center p-8 pt-24 text-center">
                 {/* Intro */}
