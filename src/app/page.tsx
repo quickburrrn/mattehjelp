@@ -12,15 +12,17 @@ import Eye from './components/icons/Eye';
 import Package from './components/icons/Package';
 import Syringe from './components/icons/Syringe';
 
-import { neon } from '@neondatabase/serverless';
-
 export default function Home(){
     async function addMail(formData: FormData) {
-        'use server';
-        
-        const sql = neon(`${process.env.DATABASE_URL}`);
         const email = formData.get('email');
-        await sql`INSERT INTO emails (email) VALUES ($email)`;
+        
+        await fetch('/api/waitlist', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email })
+        });
+
+        alert("du er på ventelista?")
     }
 
     return (
@@ -72,12 +74,10 @@ export default function Home(){
 
                 {/* Newsletter */}
                 <h1 className='pt-34 text-2xl font-rubik font-medium text-shadow-lg text-shadow-black' id="newsletter">Ønsker du Mattehjelp <span className='text-purple-600'>gratis?</span></h1>
-                <p className='pt-4 text-md font-inter font-light text-text'>Vi deler ut gratis pro versjon av Mattehjelp til alle som melder seg nyhetbrevet våres, slapp av vi spammer ikke. Du får bare en mail når mattehjelp er klar til bruk.</p>
+                <p className='pt-4 text-md font-inter font-light text-text'>Vi deler ut gratis pro versjon av Mattehjelp til alle som melder seg ventelisten våres, slapp av vi spammer ikke. Du får bare en mail når mattehjelp er klar til bruk.</p>
                 <form 
                     className='text-left'
-                    onSubmit={() => {
-                        alert('du er i ventekøen');
-                    }}
+                    action={addMail}
                 >
                     <Input type="email" className='mt-6 border-border border-1 w-full' placeholder='Din e-mail' />
                     <Checkbox className="mt-6">Jeg samtykker å få en mail når produktet er lansert</Checkbox>
