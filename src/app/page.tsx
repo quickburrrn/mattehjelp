@@ -22,7 +22,7 @@ export default function Home(){
             body: JSON.stringify({ email: email })
         });
 
-        alert("du er på ventelista?")
+        alert("du er på ventelista!")
     }
 
     return (
